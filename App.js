@@ -7,16 +7,14 @@ import Model from './screen/Model'
 import Picture from './screen/Picture';
 import ModelDetiles from './screen/ModelDetiles';
 
-
-
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='HomeScreen'>
-        <Stack.Screen name="Picture" component={Picture} options={{ headerShown: true }}  ></Stack.Screen>
-        <Stack.Screen name="Model" component={Model} options={{ headerShown: true }} ></Stack.Screen>
-        <Stack.Screen name="ModelDetiles" component={ModelDetiles} options={{ headerShown: true }} ></Stack.Screen>
+        <Stack.Screen name="Picture" component={Picture} options={{ headerShown: false }}  ></Stack.Screen>
+        <Stack.Screen name="Model" component={Model} options={{ headerShown: false}} ></Stack.Screen>
+        <Stack.Screen name="ModelDetiles" component={ModelDetiles} options={{ headerShown: false}} ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

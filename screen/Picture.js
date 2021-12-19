@@ -9,50 +9,21 @@ import {
   ScrollView,
   TextInput,
 } from 'react-native';
-import {useLinkProps} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Header } from '../component/Header';
 
 const {height, width} = Dimensions.get('screen');
 
 const Tab = createBottomTabNavigator();
 
-// const Card = props => {
 
-//   return(
-//       <View style={{...styles.card, ...props.style,}}>
-//          <Text>{props.children}</Text>
-//       <TouchableOpacity style={{alignSelf:'center'}} onPress={handleRemoveItem}>
-//        <Icon name='trash' size={35} color='red' />
-//      </TouchableOpacity>
-//      </View>
-//   )
-// };
 
-function TabA({navigation}) {
+export default function Picture({props,navigation}){
   return (
+    <>
+    <Header leftIcon='arrow-circle-left'  rightIcon='check-circle' nameScreen='Picture' />
     <View style={styles.container}>
-      <TouchableOpacity onPress={getValueFunction} style={styles.buttonStyle}>
-        <Text style={styles.buttonTextStyle}> GET VALUE </Text>
-      </TouchableOpacity>
-      <ScrollView>
-        {getitems.map(e => (
-          <Card key={e.toString()}>
-            <Text>{e}</Text>
-          </Card>
-        ))}
-      </ScrollView>
-      <Btn navigation={navigation}></Btn>
-    </View>
-  );
-}
-
-function Btn({props, navigation}) {
-  return <></>;
-}
-
-function Picture({navigation}) {
-  return (
-    <View style={styles.container}>
+      
       <View style={styles.btn}>
         <View style={{flexDirection: 'row', flex: 1,justifyContent: 'space-between',}}>
           <View style={styles.viewlableleft}>
@@ -93,9 +64,10 @@ function Picture({navigation}) {
         </View>
       </View>
     </View>
+    </>
   );
 }
-export default Picture;
+
 
 const styles = StyleSheet.create({
     container:{

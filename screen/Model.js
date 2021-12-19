@@ -9,6 +9,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
+import { Header } from '../component/Header';
 import Searchbar from '../component/Searchbar';
 
 export const items = [
@@ -55,6 +56,7 @@ export const items = [
 export default function Model({navigation}) {
   return (
     <>
+    <Header leftIcon='arrow-circle-left' rightIcon='edit'  nameScreen='Model' onPressLeft={()=>navigation.goBack()} />
       <View style={{flex: 1, backgroundColor: '#fff'}}>
         <View style={{marginVertical:20}}>
           <Searchbar></Searchbar>

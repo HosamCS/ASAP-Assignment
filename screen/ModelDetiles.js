@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { View, Text, StyleSheet, Image,TouchableOpacity, TextInput, ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Header } from '../component/Header';
 
 const RSimage = props => (
   <View
@@ -103,10 +104,11 @@ const Notes = () => {
   );
 };
 
-const ModelDetiles = ({route}) => {
+const ModelDetiles = ({route,navigation}) => {
   const {model_name, model, image, cost, reviews, category} = route.params;
   return (
     <>
+     <Header leftIcon='arrow-circle-left' rightIcon='edit'  nameScreen='Model' onPressLeft={()=>navigation.goBack()} />
       <View>
         <View
           style={{
